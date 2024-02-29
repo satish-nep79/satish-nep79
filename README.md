@@ -5,9 +5,9 @@
 
 - 🔭 I’m currently working on **developing my portfolio website using Flutter**
 
-- 🌱 I’m currently learning **everything 🤣, but focusing on advanced mobile app development techniques and exploring new tech in app development**
+- 🌱 I’m currently learning **advanced mobile app development techniques and exploring new technologies**
 
-- 👯 I’m looking to collaborate on **other content creators and developers**
+- 👯 I’m looking to collaborate on **open source projects to develop my skills further**
 
 - 📄 Know about my experiences [https://www.cvwizard.com/d/Ykk3HMGLJWqjXDeP3YxPp/view](https://www.cvwizard.com/d/Ykk3HMGLJWqjXDeP3YxPp/view)
 
