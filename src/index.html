@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Satish Nepali | Mobile App Developer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#38bdf8', 
+                            secondary: '#818cf8' 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+
+    <!-- Google Maps Loader -->
+    <script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+      key: "AIzaSyBB_SVKlC9CcEjDt1H01_B7Gjmb8FiIaGw",
+      v: "weekly",
+    });
+    </script>
+</head>
+<body class="bg-brand-dark text-slate-300 antialiased selection:bg-brand-accent selection:text-brand-dark">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-800 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <!-- LOGO: Ensure '/gen?prompt=this+image+unchanged&context_image_idx=0' is in the same folder -->
+                    <img alt="Satish Nepali Logo" class="h-10 w-10 object-contain drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" src="/public/logo.png"/>
+                    <span class="text-white font-bold text-xl tracking-tight">Satish<span class="text-brand-accent">.dev</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a class="hover:text-brand-accent text-white px-3 py-2 rounded-md text-sm font-medium transition-colors" href="#home">Home</a>
+                        <a class="hover:text-brand-accent text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-colors" href="#about">About</a>
+                        <a class="hover:text-brand-accent text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-colors" href="#experience">Experience</a>
+                        <a class="hover:text-brand-accent text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-colors" href="#education">Education</a>
+                        <a class="bg-brand-accent text-brand-dark hover:bg-sky-300 px-4 py-2 rounded-full text-sm font-bold transition-all shadow-[0_0_15px_rgba(56,189,248,0.3)]" href="#contact">Contact Me</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" type="button">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:hidden bg-brand-dark border-b border-slate-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a class="text-white block px-3 py-2 rounded-md text-base font-medium" href="#home">Home</a>
+                <a class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium" href="#about">About</a>
+                <a class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium" href="#experience">Experience</a>
+                <a class="text-brand-accent block px-3 py-2 rounded-md text-base font-medium" href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden" id="home">
+        <div class="absolute inset-0 z-0">
+            <!-- Background Image: Note that /gen images may not work offline/hosted externally. Replace with a real image URL if needed. -->
+            <img alt="Abstract Tech Background" class="w-full h-full object-cover opacity-30" src="/public/hero-bg.png" />
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-brand-dark/90 to-brand-dark"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="reveal active">
+                <div class="inline-block p-1 rounded-full bg-gradient-to-r from-brand-accent to-brand-secondary mb-6">
+                    <img alt="Profile" class="h-32 w-32 rounded-full bg-brand-dark object-contain p-2 border-4 border-brand-dark" src="/public/logo.png"/>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-secondary">Satish Nepali</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
+                    Mobile apps that feel native. Flutter &amp; Android Developer crafting intuitive experiences.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a class="px-8 py-3 rounded-full bg-brand-accent text-brand-dark font-bold hover:bg-sky-300 transition-all shadow-[0_0_20px_rgba(56,189,248,0.4)] flex items-center justify-center gap-2" href="#contact">
+                        <span class="material-symbols-outlined">send</span> Get in Touch
+                    </a>
+                    <a class="px-8 py-3 rounded-full border border-gray-600 hover:border-brand-accent hover:text-brand-accent transition-all flex items-center justify-center gap-2 bg-brand-light/50 backdrop-blur-sm" href="/public/satish-nepali.pdf" download>
+                        <span class="material-symbols-outlined">download</span> Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500">
+            <span class="material-symbols-outlined text-3xl">keyboard_arrow_down</span>
+        </div>
+    </section>
+
+    <!-- About & Skills Section -->
+    <section class="py-24 bg-brand-light/30 relative" id="about">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
+                        <span class="w-12 h-1 bg-brand-accent rounded-full"></span> About Me
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-lg">
+                        My name is Satish (Satte). I am a mobile app developer since 2021 specializing in <strong class="text-brand-accent">Flutter (Dart)</strong> and <strong class="text-brand-secondary">Kotlin</strong>. 
+                        I create mobile apps that not only function flawlessly but feel completely native to the platform.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Currently, I'm pursuing my <strong>MSc in AI &amp; Data Engineering</strong> at the University of Vaasa, Finland. 
+                        With a UI/UX-minded approach, I bridge the gap between complex functionality and intuitive design.
+                    </p>
+                    <div class="flex items-center gap-4 text-sm text-gray-500 mt-8 bg-brand-dark p-4 rounded-xl border border-slate-800">
+                        <span class="material-symbols-outlined text-brand-accent">location_on</span>
+                        <span>Based in Vaasa, Finland</span>
+                        <span class="h-4 w-px bg-gray-700 mx-2"></span>
+                        <span class="material-symbols-outlined text-green-400">check_circle</span>
+                        <span>Open to Part-time (15-25h/week)</span>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold text-white mb-8">Tech Stack</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        <div class="p-4 bg-brand-dark rounded-xl border border-slate-800 hover:border-brand-accent/50 transition-colors flex flex-col items-center gap-3 group">
+                            <span class="material-symbols-outlined text-4xl text-blue-400 group-hover:scale-110 transition-transform">flutter_dash</span>
+                            <span class="font-medium">Flutter</span>
+                        </div>
+                        <div class="p-4 bg-brand-dark rounded-xl border border-slate-800 hover:border-brand-accent/50 transition-colors flex flex-col items-center gap-3 group">
+                            <span class="material-symbols-outlined text-4xl text-purple-400 group-hover:scale-110 transition-transform">android</span>
+                            <span class="font-medium">Kotlin/Android</span>
+                        </div>
+                        <div class="p-4 bg-brand-dark rounded-xl border border-slate-800 hover:border-brand-accent/50 transition-colors flex flex-col items-center gap-3 group">
+                            <span class="material-symbols-outlined text-4xl text-green-500 group-hover:scale-110 transition-transform">javascript</span>
+                            <span class="font-medium">Node.js</span>
+                        </div>
+                        <div class="p-4 bg-brand-dark rounded-xl border border-slate-800 hover:border-brand-accent/50 transition-colors flex flex-col items-center gap-3 group">
+                            <span class="material-symbols-outlined text-4xl text-orange-400 group-hover:scale-110 transition-transform">coffee</span>
+                            <span class="font-medium">Java</span>
+                        </div>
+                        <div class="p-4 bg-brand-dark rounded-xl border border-slate-800 hover:border-brand-accent/50 transition-colors flex flex-col items-center gap-3 group">
+                            <span class="material-symbols-outlined text-4xl text-yellow-300 group-hover:scale-110 transition-transform">design_services</span>
+                            <span class="font-medium">UI/UX Design</span>
+                        </div>
+                        <div class="p-4 bg-brand-dark rounded-xl border border-slate-800 hover:border-brand-accent/50 transition-colors flex flex-col items-center gap-3 group">
+                            <span class="material-symbols-outlined text-4xl text-gray-300 group-hover:scale-110 transition-transform">description</span>
+                            <span class="font-medium">Documentation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-24 relative" id="experience">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-16 text-center reveal">
+                Professional Journey
+            </h2>
+            <div class="relative border-l border-slate-700 ml-4 md:ml-0 space-y-12">
+                <!-- Timeline Items -->
+                <div class="relative pl-8 md:pl-12 reveal group">
+                    <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-brand-dark border-2 border-brand-accent group-hover:bg-brand-accent transition-colors"></span>
+                    <div class="bg-brand-light/50 p-6 rounded-2xl border border-slate-800 hover:border-brand-accent/30 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Flutter Developer</h3>
+                            <span class="text-sm text-brand-accent font-medium bg-brand-accent/10 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0">Code Himalaya | Apr 2024 - July 2025</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-2">Lalitpur District, Nepal</p>
+                        <p class="text-gray-300">Working on diverse mobile applications.</p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-12 reveal group">
+                    <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-brand-dark border-2 border-brand-secondary group-hover:bg-brand-secondary transition-colors"></span>
+                    <div class="bg-brand-light/50 p-6 rounded-2xl border border-slate-800 hover:border-brand-secondary/30 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">UI/UX Designer</h3>
+                            <span class="text-sm text-brand-secondary font-medium bg-brand-secondary/10 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0">UPTRENDLY | Jan 2025 - June 2025</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-2">Kathmandu, Nepal</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1 text-sm">
+                            <li>Designed modern, intuitive interfaces for app features.</li>
+                            <li>Implemented design best practices, increasing user engagement by 25%.</li>
+                            <li>Collaborated with cross-functional teams for user feedback.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-12 reveal group">
+                    <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-brand-dark border-2 border-brand-accent group-hover:bg-brand-accent transition-colors"></span>
+                    <div class="bg-brand-light/50 p-6 rounded-2xl border border-slate-800 hover:border-brand-accent/30 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Flutter Developer</h3>
+                            <span class="text-sm text-brand-accent font-medium bg-brand-accent/10 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0">HISAVE | Feb 2025 - May 2025</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-2">India (Remote)</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1 text-sm">
+                            <li>Optimized key app functionalities and customized push notifications.</li>
+                            <li>Integrated deep linking for smoother navigation.</li>
+                            <li>Designed interactive onboarding experiences.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-12 reveal group">
+                    <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-brand-dark border-2 border-brand-accent group-hover:bg-brand-accent transition-colors"></span>
+                    <div class="bg-brand-light/50 p-6 rounded-2xl border border-slate-800 hover:border-brand-accent/30 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Flutter Developer</h3>
+                            <span class="text-sm text-brand-accent font-medium bg-brand-accent/10 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0">ivygo | Sep 2024 - Oct 2024</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-2">Sydney, Australia (Remote)</p>
+                        <p class="text-gray-300">Integrated and streamlined payment systems, ensuring secure transactions.</p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-12 reveal group">
+                    <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-brand-dark border-2 border-brand-secondary group-hover:bg-brand-secondary transition-colors"></span>
+                    <div class="bg-brand-light/50 p-6 rounded-2xl border border-slate-800 hover:border-brand-secondary/30 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Mobile App Developer</h3>
+                            <span class="text-sm text-brand-secondary font-medium bg-brand-secondary/10 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0">Skybase Innovations | Nov 2021 - Jan 2024</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-2">Pokhara, Nepal</p>
+                        <p class="text-gray-300">Led full cycle development using Flutter &amp; Kotlin. Integrated APIs for ads and push notifications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-24 bg-brand-light/30" id="education">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 reveal">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700 group">
+                        <img alt="University of Vaasa" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="/public/university.png"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                            <p class="text-white font-medium">University of Vaasa Campus</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 reveal">
+                    <h2 class="text-3xl font-bold text-white mb-10 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-4xl text-brand-accent">school</span> Education
+                    </h2>
+                    <div class="space-y-8">
+                        <div class="bg-brand-dark p-6 rounded-xl border-l-4 border-brand-accent shadow-lg">
+                            <h3 class="text-xl font-bold text-white">MSc in AI &amp; Data Engineering</h3>
+                            <p class="text-brand-accent font-medium mb-1">University of Vaasa, Finland</p>
+                            <p class="text-gray-500 text-sm">Aug 2025 - July 2027</p>
+                        </div>
+                        <div class="bg-brand-dark p-6 rounded-xl border-l-4 border-brand-secondary shadow-lg">
+                            <h3 class="text-xl font-bold text-white">BSc in Information Technology</h3>
+                            <p class="text-brand-secondary font-medium mb-1">London Metropolitan University</p>
+                            <p class="text-gray-500 text-sm">Sep 2019 - Sep 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section class="py-24 relative overflow-hidden" id="contact">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Let's Work Together</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">I'm currently available for part-time opportunities in Finland and the EU.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+                <!-- Contact Form -->
+                <div class="reveal">
+                    <div class="bg-brand-light/50 backdrop-blur-md p-8 rounded-3xl border border-slate-700 shadow-2xl h-full">
+                        <h3 class="text-2xl font-bold text-white mb-6">Send a Message</h3>
+                        <form class="space-y-6" id="contactForm" onsubmit="handleContact(event)">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2" for="name">Your Name</label>
+                                <input class="w-full bg-brand-dark border border-slate-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all placeholder-gray-600" id="name" placeholder="John Doe" required="" type="text"/>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2" for="subject">Subject</label>
+                                <input class="w-full bg-brand-dark border border-slate-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all placeholder-gray-600" id="subject" placeholder="Project Inquiry / Job Opportunity" required="" type="text"/>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2" for="message">Message</label>
+                                <textarea class="w-full bg-brand-dark border border-slate-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all placeholder-gray-600" id="message" placeholder="Hi Satish, I'd like to discuss..." required="" rows="4"></textarea>
+                            </div>
+                            <button class="w-full bg-brand-accent text-brand-dark font-bold py-4 rounded-lg hover:bg-sky-300 transition-all shadow-[0_4px_14px_0_rgba(56,189,248,0.39)] flex items-center justify-center gap-2 group" type="submit">
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span> Send Email
+                            </button>
+                        </form>
+                        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <a class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group" href="tel:0449513523">
+                                <div class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors">
+                                    <span class="material-symbols-outlined text-sm">call</span>
+                                </div>
+                                <span>044 951 3523</span>
+                            </a>
+                            <a class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group" href="mailto:satishnepali79@gmail.com">
+                                <div class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors">
+                                    <span class="material-symbols-outlined text-sm">mail</span>
+                                </div>
+                                <span class="truncate">satishnepali79@gmail.com</span>
+                            </a>
+                            <a class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group sm:col-span-2" href="https://www.linkedin.com/in/satish-nepali-23906a1b9" target="_blank">
+                                <div class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors">
+                                    <span class="material-symbols-outlined text-sm">link</span>
+                                </div>
+                                <span>Connect on LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Map -->
+                <div class="reveal h-full min-h-[400px]">
+                    <div class="w-full h-full rounded-3xl overflow-hidden shadow-2xl border border-slate-700 grayscale hover:grayscale-0 transition-all duration-500" id="map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-slate-800 py-8 text-center text-gray-500 text-sm">
+        <p>© 2025 Satish Nepali. Built with Tailwind CSS.</p>
+    </footer>
+
+    <!-- Logic -->
+    <script>
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Contact Form Handler
+        function handleContact(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            const mailtoLink = "mailto:satishnepali79@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent("Name: " + name + "\n\n" + message);
+            window.location.href = mailtoLink;
+        }
+
+        // Google Maps Initialization
+        async function initMap() {
+            const { Map, InfoWindow } = await google.maps.importLibrary("maps");
+            const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+
+            const vaasaCoords = { lat: 63.095, lng: 21.616 };
+
+            const map = new Map(document.getElementById("map"), {
+                center: vaasaCoords,
+                zoom: 13,
+                mapId: 'SATISH_PORTFOLIO_MAP',
+                disableDefaultUI: true,
+                gestureHandling: 'cooperative',
+                styles: [
+                    { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+                    { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+                    { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+                    { featureType: "water", elementType: "geometry", stylers: [{ color: "#17263c" }] },
+                ],
+            });
+
+            // Create Custom Pin
+            const glyph = document.createElement("span");
+            glyph.className = "material-symbols-outlined";
+            glyph.textContent = 'home_pin';
+            glyph.style.color = 'white';
+            glyph.style.fontSize = '18px';
+
+            const pin = new PinElement({
+                glyph: glyph,
+                background: "#38bdf8", // brand accent
+                borderColor: "#1e293b",
+                scale: 1.2
+            });
+
+            const marker = new AdvancedMarkerElement({
+                map,
+                position: vaasaCoords,
+                content: pin.element,
+                title: "Vaasa, Finland"
+            });
+
+            // Info Window
+            const headerDiv = document.createElement("div");
+            headerDiv.style.fontWeight = "bold";
+            headerDiv.style.fontSize = "16px";
+            headerDiv.style.color = "#0f172a";
+            headerDiv.textContent = "Satish Nepali";
+
+            const contentDiv = document.createElement("div");
+            contentDiv.style.color = "#334155";
+            contentDiv.style.marginTop = "8px";
+            contentDiv.innerHTML = '<div style="display: flex; gap: 10px; align-items: center;"><img src="/gen?prompt=this+image+unchanged&context_image_idx=0" style="width: 40px; height: 40px; object-fit: contain; background: #0f172a; border-radius: 50%; padding: 4px;"><div><p style="margin: 0;">Based in Vaasa, Finland</p><p style="margin: 0; font-size: 12px; color: #64748b;">Open for opportunities</p></div></div>';
+
+            const infoWindow = new InfoWindow({
+                headerContent: headerDiv,
+                content: contentDiv,
+            });
+
+            marker.addListener('click', () => {
+                infoWindow.open(map, marker);
+            });
+        }
+        initMap();
+    </script>
+</body>
+</html>
