@@ -101,7 +101,8 @@ Worked with teams across **Nepal, India, Australia**, delivering scalable mobile
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=satish-nep79&show_icons=true" />
+  <img src="https://github-readme-stats.vercel.app/api?username=satish-nep79&show_icons=true&hide_title=true&count_private=true&include_all_commits=true" />
+
 </p>
 
 <p align="center">
