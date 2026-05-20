@@ -124,4 +124,4 @@ Teams across **Nepal, India, and Australia** — remote and on-site.
 - 🌐 [Portfolio](https://www.satishnepali.com.np/)
 - 📧 [satishnepali79@gmail.com](mailto:satishnepali79@gmail.com)
 
-⚡ Fun fact: I can talk for hours about **mobile architecture, Spider-Man, and financial independence before 30** 😄
+⚡ Fun fact: ⚡Most of my summer is currently split between React bugs, Finnish listening practice, and convincing AI models to behave. 😄
