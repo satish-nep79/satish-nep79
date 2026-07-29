@@ -1,11 +1,11 @@
 <h1 align="center">Hi 👋, I'm Satish Nepali</h1>
 
 <h3 align="center">
-Mobile Developer → Full-Stack & AI Engineer in Progress
+Mobile Developer (Flutter · Android) — Building toward Full-Stack & AI Engineering
 </h3>
 
 <p align="center">
-3+ years building production mobile apps · MSc in AI & Data Engineering · Currently re-skilling toward full-stack and AI engineering
+3.5+ years building production mobile apps · MSc in AI & Data Engineering, University of Vaasa
 </p>
 
 <p align="center">
@@ -22,30 +22,14 @@ Mobile Developer → Full-Stack & AI Engineer in Progress
 
 ## 👨‍💻 About Me
 
-I'm a mobile developer with 3+ years of hands-on experience building Flutter and Android (Kotlin) applications for startups and international teams — including production apps, reusable SDKs, and payment integrations.
+I'm a mobile developer with 3.5+ years of professional experience building Flutter and Android (Kotlin) applications — production apps, a reusable Android SDK, and live payment integrations, delivered independently for startups and international clients.
 
-Since mid-2025, I've been on a deliberate career transition. I paused active employment to pursue an **MSc in AI & Data Engineering at the University of Vaasa, Finland**, and I'm now spending the summer of 2026 deepening my full-stack and AI engineering skills to complement my mobile background.
+Since August 2025 I've been pursuing an **MSc in AI & Data Engineering at the University of Vaasa, Finland**. My near-term focus stays on mobile development, where my track record is strongest, while I deliberately build toward fullstack and AI engineering proof points on the side.
 
-- 📱 Built production apps used by real users across Nepal, India, and Australia
-- 🔌 Worked with REST APIs, Firebase, Stripe, deep linking, push notifications
-- 🧩 Authored reusable Android SDKs (Kotlin) for third-party partner integrations
-- 🎓 Pursuing **MSc in AI & Data Engineering** — focused on AI systems, data pipelines, and intelligent applications
-- 🌱 Currently re-learning and deepening: **React, Python, AI/LLM engineering**
-
----
-
-## 🚧 Current Focus (Summer 2026)
-
-I'm in an intentional deep-learning phase — no active employment, full focus on skill-building and building things.
-
-| Area | What I'm Working On |
-|---|---|
-| **Frontend** | React — rebuilding fluency after a 2–3 year gap |
-| **AI Engineering** | LLM applications, prompt engineering, AI-integrated products |
-| **Python** | Automation, data workflows, ML tooling |
-| **Language** | Finnish 🇫🇮 (A2 level, University course) |
-
-I'll be documenting progress through public repositories as I build. If a repo looks new or small — that's intentional. I'm starting from scratch in public.
+- 📱 Built production apps used by real users in Nepal and Australia
+- 🔌 Worked with REST APIs, Firebase (push notifications), Stripe, Android SDK design
+- 🧩 Authored a reusable Android Flight Booking SDK (Kotlin) with pluggable payment architecture
+- 🎓 Pursuing **MSc in AI & Data Engineering** — AI, data engineering, ML, database systems
 
 ---
 
@@ -55,66 +39,80 @@ I'll be documenting progress through public repositories as I build. If a repo l
 - Flutter · Dart
 - Android SDK · Kotlin
 
-**Web**
-- React.js · TypeScript · JavaScript
-- Firebase (Auth, Firestore, Cloud Messaging)
-
-**AI & Data**
-- Python · Pandas · Data pipelines
-- LLM tooling (in progress)
+**Backend & Integration**
+- REST APIs · Firebase (push notifications)
+- Payment Integration (Stripe, eSewa, Khalti)
+- Google Maps API · sqflite
 
 **Tools & Practices**
 - Git & GitHub
-- Clean Architecture · Modular Design
-- Payment Integration (Stripe)
-- Push Notifications · Deep Linking
+- GetX · Riverpod · Bloc (Flutter state management)
+- Agile/Scrum
 
 ---
 
 ## 🚀 Featured Projects
 
-### ✈️ Sasto Tickets Platform
-**Flight Booking SDK · Mobile App · Viber Bot**
-
-- Built a **Kotlin-based Android SDK** for real-time flight search and booking
-- Developed a **Flutter flight booking app** with end-to-end payment integration
-- Created a **Node.js Viber bot** for automated booking notifications
-
-**Tech:** Kotlin · Flutter · Dart · Node.js · REST APIs
-
----
-
-### 📚 Saral Shikshya
-**Exam Preparation Mobile App**
-
-- Mock tests, timed real-exam simulations, and performance analytics
-- Deployed to production with Firebase backend
-
-**Tech:** Flutter · Firebase · GetX  
-🔗 [Play Store](https://play.google.com/store/apps/details?id=com.saralshikshya.app)
-
----
-
 ### 🍔 Bhoklayo
-**Food Delivery & Restaurant Management System**
+**Food Delivery App (Flutter)**
 
-- QR-based table ordering system
-- Real-time order tracking with Google Maps integration
+- QR-based table ordering, real-time order tracking with Google Maps integration
+- Live on Play Store and App Store — **1,000+ downloads**
+
+🔗 [Play Store](https://play.google.com/store/apps/details?id=com.bhoklayo.android) · [App Store](https://apps.apple.com/fi/app/bhoklayo/id6475251463)
 
 **Tech:** Flutter · Firebase · REST APIs · Google Maps
 
 ---
 
+### ✈️ Sasto Tickets Platform
+**Android Flight Booking SDK · Flutter App · Viber Bot**
+
+- Built a **Kotlin Android SDK** for third-party apps to embed flight booking, with a pluggable payment architecture (SDK can handle payment or hand back a structured JSON receipt, controlled by an init-time flag)
+- Built the companion **Flutter flight booking app** with full REST API integration
+- Built a **Node.js Viber bot** for booking flows and notifications
+- Live on **Nepal's #1 online travel platform**
+
+🔗 [Play Store](https://play.google.com/store/apps/details?id=com.sastotickets.android)
+
+**Tech:** Kotlin · Android SDK · Flutter · Node.js · REST APIs
+
+---
+
+### 💳 IvyGo — Stripe Checkout Integration
+**Flutter (delivered via Code Himalaya, remote with a Sydney-based team)**
+
+- Full Stripe checkout integration — card input, confirmation, error/retry handling, secure transaction processing — into an existing Flutter app for a peer-to-peer EV charging platform in Australia
+
+🔗 [Play Store](https://play.google.com/store/apps/details?id=com.ivygo_1.android) · [App Store](https://apps.apple.com/fi/app/ivygo/id6737192367)
+
+**Tech:** Flutter · Stripe SDK
+
+---
+
+### 📚 Saral Pathshala
+**White-label Multi-Tenant E-Learning App (Flutter)**
+
+- Rebrandable per client via build-time config (app name, colors, assets, backend URL) with fully isolated builds
+- Two exam modes (Mock Test, Real-Time Exam), bookmarking, performance analytics
+- 100+ downloads
+
+🔗 [saralpathshala.com](https://saralpathshala.com)
+
+**Tech:** Flutter · Firebase · GetX · sqflite
+
+---
+
 ## 🌍 Professional Experience
 
-| Role | Company |
-|---|---|
-| Flutter Developer | Code Himalaya |
-| Mobile App Developer | Skybase Innovations |
-| Flutter Developer (Contract) | HiSAVE · IvyGo |
-| UI/UX Designer (Contract) | Uptrendly |
+| Role | Company | Period |
+|---|---|---|
+| Flutter Developer | Code Himalaya | Apr 2024 – Jun 2025 |
+| UI/UX Designer (Figma, contract) | UPTRENDLY | Jan 2025 – Jun 2025 |
+| Mobile Developer (Android SDK + Flutter) | Sasto Tickets, via Skybase Innovation | Mar 2022 – Nov 2023 |
+| Mobile App Developer | Skybase Innovation | Nov 2021 – Jan 2024 |
 
-Teams across **Nepal, India, and Australia** — remote and on-site.
+Delivered for teams and clients across Nepal and Australia — remote and on-site.
 
 ---
 
@@ -123,5 +121,3 @@ Teams across **Nepal, India, and Australia** — remote and on-site.
 - 💼 [LinkedIn](https://www.linkedin.com/in/satish-nepali-23906a1b9/)
 - 🌐 [Portfolio](https://www.satishnepali.com.np/)
 - 📧 [satishnepali79@gmail.com](mailto:satishnepali79@gmail.com)
-
-⚡ Fun fact: ⚡Most of my summer is currently split between React bugs, Finnish listening practice, and convincing AI models to behave. 😄
